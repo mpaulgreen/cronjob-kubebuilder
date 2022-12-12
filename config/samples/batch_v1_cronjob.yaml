@@ -10,10 +10,10 @@ metadata:
   name: cronjob-sample
 spec:
   schedule: "*/1 * * * *"
-  startingDeadlineSeconds: 60
+  startingDeadlineSeconds: 120
   concurrencyPolicy: Allow # explicitly specify, but Allow is also default.
-  successfulJobsHistoryLimit: 1
-  failedJobsHistoryLimit: 1
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 3
   jobTemplate:
     spec:
       template:

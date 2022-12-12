@@ -1,0 +1,77 @@
+apiVersion: v1
+items:
+- apiVersion: batch.tutorial.kubebuilder.io/v1
+  kind: CronJob
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"batch.tutorial.kubebuilder.io/v1","kind":"CronJob","metadata":{"annotations":{},"labels":{"app.kubernetes.io/created-by":"cronjob","app.kubernetes.io/instance":"cronjob-sample","app.kubernetes.io/managed-by":"kustomize","app.kubernetes.io/name":"cronjob","app.kubernetes.io/part-of":"cronjob"},"name":"cronjob-sample","namespace":"memcached-operator"},"spec":{"concurrencyPolicy":"Allow","failedJobsHistoryLimit":1,"jobTemplate":{"spec":{"template":{"spec":{"containers":[{"args":["/bin/sh","-c","date; echo Hello from the Kubernetes cluster"],"image":"busybox","name":"hello"}],"restartPolicy":"OnFailure"}}}},"schedule":"*/1 * * * *","startingDeadlineSeconds":60,"successfulJobsHistoryLimit":1}}
+    creationTimestamp: "2022-12-12T13:58:46Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/created-by: cronjob
+      app.kubernetes.io/instance: cronjob-sample
+      app.kubernetes.io/managed-by: kustomize
+      app.kubernetes.io/name: cronjob
+      app.kubernetes.io/part-of: cronjob
+    managedFields:
+    - apiVersion: batch.tutorial.kubebuilder.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/created-by: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/part-of: {}
+        f:spec:
+          .: {}
+          f:concurrencyPolicy: {}
+          f:failedJobsHistoryLimit: {}
+          f:jobTemplate:
+            .: {}
+            f:spec:
+              .: {}
+              f:template:
+                .: {}
+                f:spec:
+                  .: {}
+                  f:containers: {}
+                  f:restartPolicy: {}
+          f:schedule: {}
+          f:startingDeadlineSeconds: {}
+          f:successfulJobsHistoryLimit: {}
+      manager: kubectl-client-side-apply
+      operation: Update
+      time: "2022-12-12T13:58:46Z"
+    name: cronjob-sample
+    namespace: memcached-operator
+    resourceVersion: "1919020"
+    uid: 9b39acd3-92ae-482d-8352-feb7ad20de82
+  spec:
+    concurrencyPolicy: Allow
+    failedJobsHistoryLimit: 1
+    jobTemplate:
+      spec:
+        template:
+          spec:
+            containers:
+            - args:
+              - /bin/sh
+              - -c
+              - date; echo Hello from the Kubernetes cluster
+              image: busybox
+              name: hello
+            restartPolicy: OnFailure
+    schedule: '*/1 * * * *'
+    startingDeadlineSeconds: 60
+    successfulJobsHistoryLimit: 1
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""

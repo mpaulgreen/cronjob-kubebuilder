@@ -1,0 +1,111 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  annotations:
+    batch.tutorial.kubebuilder.io/scheduled-at: "2022-12-12T08:30:00-05:00"
+  creationTimestamp: "2022-12-12T13:30:23Z"
+  generation: 1
+  labels:
+    controller-uid: 99c5a874-89b2-44b2-b84c-4dcd44851c8f
+    job-name: cronjob-sample-1670851800
+  managedFields:
+  - apiVersion: batch/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:batch.tutorial.kubebuilder.io/scheduled-at: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"9eede68b-e621-447f-97d4-3b7c6dad39cd"}: {}
+      f:spec:
+        f:backoffLimit: {}
+        f:completionMode: {}
+        f:completions: {}
+        f:parallelism: {}
+        f:suspend: {}
+        f:template:
+          f:spec:
+            f:containers:
+              k:{"name":"hello"}:
+                .: {}
+                f:args: {}
+                f:image: {}
+                f:imagePullPolicy: {}
+                f:name: {}
+                f:resources: {}
+                f:terminationMessagePath: {}
+                f:terminationMessagePolicy: {}
+            f:dnsPolicy: {}
+            f:restartPolicy: {}
+            f:schedulerName: {}
+            f:securityContext: {}
+            f:terminationGracePeriodSeconds: {}
+    manager: __debug_bin
+    operation: Update
+    time: "2022-12-12T13:30:23Z"
+  - apiVersion: batch/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:completionTime: {}
+        f:conditions: {}
+        f:startTime: {}
+        f:succeeded: {}
+    manager: kube-controller-manager
+    operation: Update
+    subresource: status
+    time: "2022-12-12T13:30:26Z"
+  name: cronjob-sample-1670851800
+  namespace: memcached-operator
+  ownerReferences:
+  - apiVersion: batch.tutorial.kubebuilder.io/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: CronJob
+    name: cronjob-sample
+    uid: 9eede68b-e621-447f-97d4-3b7c6dad39cd
+  resourceVersion: "1911142"
+  uid: 99c5a874-89b2-44b2-b84c-4dcd44851c8f
+spec:
+  backoffLimit: 6
+  completionMode: NonIndexed
+  completions: 1
+  parallelism: 1
+  selector:
+    matchLabels:
+      controller-uid: 99c5a874-89b2-44b2-b84c-4dcd44851c8f
+  suspend: false
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        controller-uid: 99c5a874-89b2-44b2-b84c-4dcd44851c8f
+        job-name: cronjob-sample-1670851800
+    spec:
+      containers:
+      - args:
+        - /bin/sh
+        - -c
+        - date; echo Hello from the Kubernetes cluster
+        image: busybox
+        imagePullPolicy: Always
+        name: hello
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: OnFailure
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+status:
+  completionTime: "2022-12-12T13:30:26Z"
+  conditions:
+  - lastProbeTime: "2022-12-12T13:30:26Z"
+    lastTransitionTime: "2022-12-12T13:30:26Z"
+    status: "True"
+    type: Complete
+  startTime: "2022-12-12T13:30:23Z"
+  succeeded: 1
