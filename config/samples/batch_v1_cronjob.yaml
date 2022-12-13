@@ -11,9 +11,9 @@ metadata:
 spec:
   schedule: "*/1 * * * *"
   startingDeadlineSeconds: 120
-  concurrencyPolicy: Allow # explicitly specify, but Allow is also default.
-  successfulJobsHistoryLimit: 3
-  failedJobsHistoryLimit: 3
+  # concurrencyPolicy: Allow # explicitly specify, but Allow is also default.
+  # successfulJobsHistoryLimit: 3
+  # failedJobsHistoryLimit: 3
   jobTemplate:
     spec:
       template:
