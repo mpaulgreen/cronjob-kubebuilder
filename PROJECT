@@ -17,4 +17,12 @@ resources:
     defaulting: true
     validation: true
     webhookVersion: v1
+- api:
+    crdVersion: v1
+    namespaced: true
+  domain: tutorial.kubebuilder.io
+  group: batch
+  kind: CronJob
+  path: tutorial.kubebuilder.io/cronjob/api/v2
+  version: v2
 version: "3"
