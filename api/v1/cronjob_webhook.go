@@ -154,7 +154,7 @@ func (r *CronJob) validateCronJobName() *field.Error {
 		// The job name length is 63 character like all Kubernetes objects
 		// (which must fit in a DNS subdomain). The cronjob controller appends
 		// a 11-character suffix to the cronjob (`-$TIMESTAMP`) when creating
-		// a job. The job name length limit is 63 characters. Therefore cronjob
+		// a job. The job name length limit is 63 characters. There fore cronjob
 		// names must have length <= 63-11=52. If we don't validate this here,
 		// then job creation will fail later.
 		return field.Invalid(field.NewPath("metadata").Child("name"), r.Name, "must be no more than 52 characters")
